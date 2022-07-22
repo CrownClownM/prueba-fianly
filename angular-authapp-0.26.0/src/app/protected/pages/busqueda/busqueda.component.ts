@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
   templateUrl: './busqueda.component.html',
   styleUrls: ['../../catalogo.css']
 })
+
 export class BusquedaComponent {
 
   termino: string = '';

@@ -1,26 +1,24 @@
-<header>
-    <form (ngSubmit)="buscar()" autocomplete="off">
-        <input type="text" 
-               name="termino"
-               class="search-bar" 
-               [(ngModel)]="termino"
-               placeholder="Buscar">
-    </form>
-    <div class="container" *ngIf="!hayError">
-        <div class="card" *ngFor="let personaje of respuesta?.results">
-            <img src="{{personaje.image}}">
-            <p>{{personaje.name}}</p>
-            <a routerLink="../personaje/{{personaje.id}}">Leer más</a>
-        </div>
-        <section class="pagination">
-            <ul>
-                <li *ngFor="let in of [].constructor(respuesta.info?.pages); let i = index">
-                    <a (click)="pagina(i+1)">{{i+1}}</a>
-                </li>
-            </ul>
-        </section>
-    </div>
-</header>
+<form (ngSubmit)="buscar()" autocomplete="off">
+    <input type="text" 
+            name="termino"
+            class="search-bar" 
+            [(ngModel)]="termino"
+            placeholder="Buscar">
+</form>
 
+<div class="container" *ngIf="!hayError">
+    <div class="card" *ngFor="let personaje of respuesta?.results">
+        <img src="{{personaje.image}}">
+        <p>{{personaje.name}}</p>
+        <a routerLink="../personaje/{{personaje.id}}">Leer más</a>
+    </div>
+    <div class="pagination">
+        <ul>
+            <li *ngFor="let in of [].constructor(respuesta.info?.pages); let i = index">
+                <a (click)="pagina(i+1)">{{i+1}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 
