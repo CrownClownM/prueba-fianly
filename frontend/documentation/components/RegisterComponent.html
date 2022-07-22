@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente encargado del registro de usuarios</p>
+
+    </p>
 
 
 
@@ -168,7 +175,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/auth/pages/register/register.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/auth/pages/register/register.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -259,14 +266,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/auth/pages/register/register.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/auth/pages/register/register.component.ts:40</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Funcion que se encarga de tomar los datos del formulario de registro y hacer la peticion de registro para un usuario</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -313,10 +322,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/auth/pages/register/register.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/auth/pages/register/register.component.ts:23</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Definicion del formulario reactivo con parametros predeterminados para mayor facilidad de pruebas al hacer un registro</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -330,8 +345,11 @@
 import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
-
 import { AuthService } from &#x27;../../services/auth.service&#x27;;
+
+/**
+ * Componente encargado del registro de usuarios
+ */
 
 @Component({
   selector: &#x27;app-register&#x27;,
@@ -340,6 +358,10 @@ import { AuthService } from &#x27;../../services/auth.service&#x27;;
 })
 
 export class RegisterComponent {
+
+  /** 
+   * Definicion del formulario reactivo con parametros predeterminados para mayor facilidad de pruebas al hacer un registro
+  */
 
   miFormulario: FormGroup &#x3D; this.fb.group({
     name:     [&#x27;Test&#x27;, [ Validators.required ]],
@@ -355,12 +377,13 @@ export class RegisterComponent {
                private authService: AuthService ) { }
 
 
+  /**
+   * Funcion que se encarga de tomar los datos del formulario de registro y hacer la peticion de registro para un usuario
+   */
   registro() {
     const { name, lastName, email, password, dateBirth, gender } &#x3D; this.miFormulario.value;
-
     this.authService.registro( name, lastName, email, password, dateBirth, gender )
       .subscribe( ok &#x3D;&gt; {
-
         if ( ok &#x3D;&#x3D;&#x3D; true ) {
           this.router.navigateByUrl(&#x27;/home&#x27;);
           Swal.fire(&#x27;Cuenta creada correctamente&#x27;, ok, &#x27;success&#x27;);
@@ -653,7 +676,7 @@ export class RegisterComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><form class="form-register"       [formGroup]="miFormulario"      (ngSubmit)="registro()">    <h5>Registro</h5>    <label>Nombre</label>    <input class="controls"             type="text"             formControlName="name"            placeholder="Ingrese su nombre">    <label>Apellido</label>    <input class="controls"            type="text"            formControlName="lastName"           placeholder="Ingrese su apellido">    <label>Correo</label>    <input class="controls"             type="email"             formControlName="email"            placeholder="Ingrese su correo">    <label>Contraseña</label>    <input class="controls"             type="password"             formControlName="password"            placeholder="Ingrese su contraseña">    <label>Fecha de nacimiento</label>    <input class="controls"            type="date"            formControlName="dateBirth">    <label>Sexo</label>    <div class="container">        <label class="radioButton">                 <input                name="gender"                type="radio"                value="M"                formControlName="gender"> Masculino                <span></span>        </label>        <label class="radioButton">                <input                name="gender"                type="radio"                value="F"                formControlName="gender"> Femenino                <span></span>        </label>    </div>        <button class="boton cuatro"            type="submit">    <span>Registrarse</span>    </button>    <p>        <span>¿Ya tienes una cuenta?</span>        <br>        <a routerLink="/">INGRESA AQUÍ</a>    </p></form></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BusquedaComponent', 'selector': 'app-busqueda'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'PersonajeComponent', 'selector': 'app-personaje'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'PersonajeComponent', 'selector': 'app-personaje'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RegisterComponent'};
 </script>

@@ -6,12 +6,16 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
 
-
 import { AuthResponse, Usuario } from '../interfaces/auth.interface';
+
+/**
+ * Definicion del servicio para obtener la informacion del backend
+ */
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   private baseUrl: string = environment.baseUrl;
@@ -21,8 +25,11 @@ export class AuthService {
     return { ...this._usuario };
   }
 
-
   constructor( private http: HttpClient ) { }
+
+  /**
+   * Realiza el registro con la informacion de los campos del formulario
+  */
 
   registro( name: string, lastName:string, email: string, password: string, dateBirth: string, gender: string ) {
 
@@ -42,7 +49,9 @@ export class AuthService {
 
   }
 
-
+  /**
+   * Realiza el login con la informacion de los campos del formulario
+  */
 
   login( email: string, password: string ) {
 
@@ -61,6 +70,9 @@ export class AuthService {
       );
   }
 
+  /**
+   * Realiza la validacion del token en el localstorage
+  */
 
   validarToken(): Observable<boolean> {
 
@@ -87,6 +99,10 @@ export class AuthService {
         );
 
   }
+
+  /**
+   * Realiza el cierre de sesion del usuario
+  */
 
   logout() {
     localStorage.clear();

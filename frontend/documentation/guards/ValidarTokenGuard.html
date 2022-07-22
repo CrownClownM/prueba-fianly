@@ -64,6 +64,13 @@
             </p>
 
 
+                <p class="comment">
+                <h3>Description</h3>
+                </p>
+                <p class="comment">
+                    <p>Guard encargado de verificar el token mientras el usuario inicia sesion y esta activo</p>
+
+                </p>
 
 
 
@@ -110,7 +117,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/guards/validar-token.guard.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/guards/validar-token.guard.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -185,8 +192,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/guards/validar-token.guard.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/guards/validar-token.guard.ts:23</a></div>
                 </td>
             </tr>
 
@@ -222,8 +229,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/guards/validar-token.guard.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/guards/validar-token.guard.ts:34</a></div>
                 </td>
             </tr>
 
@@ -252,9 +259,14 @@ import { tap } from &#x27;rxjs/operators&#x27;;
 
 import { AuthService } from &#x27;../auth/services/auth.service&#x27;;
 
+/**
+ * Guard encargado de verificar el token mientras el usuario inicia sesion y esta activo
+ */
+
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
 export class ValidarTokenGuard implements CanActivate, CanLoad {
   
   constructor( private authService: AuthService,

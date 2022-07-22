@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ValidarTokenGuard } from './guards/validar-token.guard';
 
+/**
+ * Definicion de las rutas de la pagina
+ */
+
 const routes: Routes = [
 
   {

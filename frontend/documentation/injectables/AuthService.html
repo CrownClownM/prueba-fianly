@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Definicion del servicio para obtener la informacion del backend</p>
+
+            </p>
 
 
 
@@ -146,7 +153,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/auth/services/auth.service.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/auth/services/auth.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -209,14 +216,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/auth/services/auth.service.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/auth/services/auth.service.ts:56</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Realiza el login con la informacion de los campos del formulario</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -290,14 +299,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">src/app/auth/services/auth.service.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/auth/services/auth.service.ts:107</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Realiza el cierre de sesion del usuario</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -327,14 +338,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/auth/services/auth.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/auth/services/auth.service.ts:34</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Realiza el registro con la informacion de los campos del formulario</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -456,14 +469,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/auth/services/auth.service.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/auth/services/auth.service.ts:77</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Realiza la validacion del token en el localstorage</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
@@ -499,7 +514,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/auth/services/auth.service.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/auth/services/auth.service.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -531,7 +546,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/auth/services/auth.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/auth/services/auth.service.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -560,7 +575,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/auth/services/auth.service.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/auth/services/auth.service.ts:24</a></div>
                                 </td>
                             </tr>
 
@@ -579,12 +594,16 @@ import { catchError, map, tap } from &#x27;rxjs/operators&#x27;;
 
 import { environment } from &#x27;../../../environments/environment&#x27;;
 
-
 import { AuthResponse, Usuario } from &#x27;../interfaces/auth.interface&#x27;;
+
+/**
+ * Definicion del servicio para obtener la informacion del backend
+ */
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
 export class AuthService {
 
   private baseUrl: string &#x3D; environment.baseUrl;
@@ -594,8 +613,11 @@ export class AuthService {
     return { ...this._usuario };
   }
 
-
   constructor( private http: HttpClient ) { }
+
+  /**
+   * Realiza el registro con la informacion de los campos del formulario
+  */
 
   registro( name: string, lastName:string, email: string, password: string, dateBirth: string, gender: string ) {
 
@@ -615,7 +637,9 @@ export class AuthService {
 
   }
 
-
+  /**
+   * Realiza el login con la informacion de los campos del formulario
+  */
 
   login( email: string, password: string ) {
 
@@ -634,6 +658,9 @@ export class AuthService {
       );
   }
 
+  /**
+   * Realiza la validacion del token en el localstorage
+  */
 
   validarToken(): Observable&lt;boolean&gt; {
 
@@ -660,6 +687,10 @@ export class AuthService {
         );
 
   }
+
+  /**
+   * Realiza el cierre de sesion del usuario
+  */
 
   logout() {
     localStorage.clear();

@@ -1,3 +1,7 @@
+/**
+ * Definicion de las interfaces necesarias para el modelo de la informacion de la peticion de usuarios de la base de datos
+*/
+
 export interface AuthResponse {
     ok: boolean;
     uid?: string;

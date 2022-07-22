@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente encargado del inicio de sesion de usuarios</p>
+
+    </p>
 
 
 
@@ -168,7 +175,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/auth/pages/login/login.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/auth/pages/login/login.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -182,6 +189,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -196,6 +204,8 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -208,6 +218,8 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>authService</td>
@@ -220,6 +232,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>: Haciendo llamado al servicio de autenticacion</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -259,14 +275,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/auth/pages/login/login.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/auth/pages/login/login.component.ts:36</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Funcion que se encarga de tomar los datos del formulario de login y hacer la peticion de inicio de sesion</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -309,10 +327,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/auth/pages/login/login.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/auth/pages/login/login.component.ts:21</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Definicion del formulario reactivo con parametros predeterminados para mayor facilidad de pruebas al hacer un inicio de sesion</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -325,10 +349,12 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-
 import Swal from &#x27;sweetalert2&#x27;;
-
 import { AuthService } from &#x27;../../services/auth.service&#x27;;
+
+/**
+ * Componente encargado del inicio de sesion de usuarios
+ */
 
 @Component({
   selector: &#x27;app-login&#x27;,
@@ -337,23 +363,28 @@ import { AuthService } from &#x27;../../services/auth.service&#x27;;
 })
 export class LoginComponent {
 
+  /** 
+   * Definicion del formulario reactivo con parametros predeterminados para mayor facilidad de pruebas al hacer un inicio de sesion
+  */
   miFormulario: FormGroup &#x3D; this.fb.group({
     email:    [&#x27;test@test.com&#x27;, [ Validators.required, Validators.email ]],
     password: [&#x27;123456&#x27;, [ Validators.required, Validators.minLength(6) ]],
   });
 
+  /**
+   * @param authService: Haciendo llamado al servicio de autenticacion
+   */
   constructor( private fb: FormBuilder,
                private router: Router, 
                private authService: AuthService) { }
 
-
+  /**
+   * Funcion que se encarga de tomar los datos del formulario de login y hacer la peticion de inicio de sesion
+   */
   login() {
-  
     const { email, password } &#x3D; this.miFormulario.value;
-
     this.authService.login( email, password )
       .subscribe( ok &#x3D;&gt; {
-
         if ( ok &#x3D;&#x3D;&#x3D; true ) {
           this.router.navigateByUrl(&#x27;/home&#x27;);
         } else {
@@ -608,7 +639,7 @@ export class LoginComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><form class="form-login"       [formGroup]="miFormulario"      (ngSubmit)="login()">    <h5>Login</h5>    <label>Correo</label>    <input class="controls"             type="email"             formControlName="email"            placeholder="Ingrese su correo">    <label>Contraseña</label>    <input class="controls"             type="password"             formControlName="password"            placeholder="Ingrese su contraseña">    <button class="boton cuatro"            type="submit">        <span>Ingresar</span>    </button>    <p>        <span>¿No tienes una cuenta?</span>        <br>        <a routerLink="/auth/registro">CREA UNA AQUÍ</a>    </p></form></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BusquedaComponent', 'selector': 'app-busqueda'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'PersonajeComponent', 'selector': 'app-personaje'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'PersonajeComponent', 'selector': 'app-personaje'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

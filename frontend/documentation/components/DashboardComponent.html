@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente principal que muestra el componente catalogo y personaje</p>
+
+    </p>
 
 
 
@@ -168,7 +175,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/protected/pages/dashboard/dashboard.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/protected/pages/dashboard/dashboard.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -247,14 +254,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/protected/pages/dashboard/dashboard.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/protected/pages/dashboard/dashboard.component.ts:27</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Funcion de cierre de sesion</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -286,7 +295,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/protected/pages/dashboard/dashboard.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/protected/pages/dashboard/dashboard.component.ts:17</a></div>
                                 </td>
                             </tr>
 
@@ -301,11 +310,16 @@
 import { Router } from &#x27;@angular/router&#x27;;
 import { AuthService } from &#x27;../../../auth/services/auth.service&#x27;;
 
+/**
+ * Componente principal que muestra el componente catalogo y personaje
+ */
+
 @Component({
   selector: &#x27;app-dashboard&#x27;,
   templateUrl: &#x27;./dashboard.component.html&#x27;,
   styleUrls: [ &#x27;../../catalogo.css&#x27;]
 })
+
 export class DashboardComponent {
 
   get usuario() {
@@ -315,6 +329,9 @@ export class DashboardComponent {
   constructor( private router: Router,
                private authService: AuthService ) { }
 
+  /**
+   * Funcion de cierre de sesion
+   */
   logout() {
     this.router.navigateByUrl(&#x27;/&#x27;);
     this.authService.logout();
@@ -642,7 +659,7 @@ button:hover {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="background">  <header>    <div class="logo">      <a routerLink="./">        <img src="../../../assets/images/rmb.png">      </a>      <p>El universo es muy grande para preocuparse por algo tan pequeño.</p>    </div>    <div class="categories" id="categories">      <a (click)="logout()">Cerrar sesión</a>    </div>  </header>  <div class="catalogo">    <router-outlet></router-outlet>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BusquedaComponent', 'selector': 'app-busqueda'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'PersonajeComponent', 'selector': 'app-personaje'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'PersonajeComponent', 'selector': 'app-personaje'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
 </script>

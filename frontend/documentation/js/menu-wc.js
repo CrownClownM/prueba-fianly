@@ -79,13 +79,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AuthModule.html" data-type="entity-link" >AuthModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AuthModule-942a3660beab4db7feff9431785f86b529d2918252515930b951907cc298ac853bc68c5e6f8fab22fa7b7922906952324917ccf85f8e77bc69306ce1f41fb975"' : 'data-target="#xs-components-links-module-AuthModule-942a3660beab4db7feff9431785f86b529d2918252515930b951907cc298ac853bc68c5e6f8fab22fa7b7922906952324917ccf85f8e77bc69306ce1f41fb975"' }>
+                                            'data-target="#components-links-module-AuthModule-983821ccfd1b0b8129c8a436374e65ea89d0572fc9d47214560827071f1c3a6071864e42179ec37788ee91e855b8cfbd3c5fc66b3b8a76c63608b57a45d99ec9"' : 'data-target="#xs-components-links-module-AuthModule-983821ccfd1b0b8129c8a436374e65ea89d0572fc9d47214560827071f1c3a6071864e42179ec37788ee91e855b8cfbd3c5fc66b3b8a76c63608b57a45d99ec9"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AuthModule-942a3660beab4db7feff9431785f86b529d2918252515930b951907cc298ac853bc68c5e6f8fab22fa7b7922906952324917ccf85f8e77bc69306ce1f41fb975"' :
-                                            'id="xs-components-links-module-AuthModule-942a3660beab4db7feff9431785f86b529d2918252515930b951907cc298ac853bc68c5e6f8fab22fa7b7922906952324917ccf85f8e77bc69306ce1f41fb975"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AuthModule-983821ccfd1b0b8129c8a436374e65ea89d0572fc9d47214560827071f1c3a6071864e42179ec37788ee91e855b8cfbd3c5fc66b3b8a76c63608b57a45d99ec9"' :
+                                            'id="xs-components-links-module-AuthModule-983821ccfd1b0b8129c8a436374e65ea89d0572fc9d47214560827071f1c3a6071864e42179ec37788ee91e855b8cfbd3c5fc66b3b8a76c63608b57a45d99ec9"' }>
                                             <li class="link">
                                                 <a href="components/LoginComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LoginComponent</a>
                                             </li>
@@ -112,9 +112,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         </div>
                                         <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ProtectedModule-0bbbfe77ec914ac19fa75827834eb5e8b30a81659174a5fd9b3dec34996d1261a7500fa8f02faa154a5cecf74fbdcad5db3af2d038f526f112c7c2175ccbc460"' :
                                             'id="xs-components-links-module-ProtectedModule-0bbbfe77ec914ac19fa75827834eb5e8b30a81659174a5fd9b3dec34996d1261a7500fa8f02faa154a5cecf74fbdcad5db3af2d038f526f112c7c2175ccbc460"' }>
-                                            <li class="link">
-                                                <a href="components/BusquedaComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >BusquedaComponent</a>
-                                            </li>
                                             <li class="link">
                                                 <a href="components/CatalogoComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CatalogoComponent</a>
                                             </li>

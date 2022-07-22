@@ -77,7 +77,6 @@ import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 import { DashboardComponent } from &#x27;./pages/dashboard/dashboard.component&#x27;;
 import { CatalogoComponent } from &#x27;./pages/catalogo/catalogo.component&#x27;;
 import { PersonajeComponent } from &#x27;./pages/personaje/personaje.component&#x27;;
-import { BusquedaComponent } from &#x27;./pages/busqueda/busqueda.component&#x27;;
 
 const routes: Routes &#x3D; [
 
@@ -86,7 +85,6 @@ const routes: Routes &#x3D; [
     component: DashboardComponent,
     children: [
       { path: &#x27;&#x27;, component: CatalogoComponent},
-      { path: &#x27;buscar&#x27;, component: BusquedaComponent },
       { path: &#x27;personaje/:id&#x27;, component: PersonajeComponent},
       { path: &#x27;**&#x27;, redirectTo: &#x27;&#x27; },
     ]

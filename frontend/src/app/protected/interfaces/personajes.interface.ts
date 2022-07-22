@@ -1,3 +1,7 @@
+/**
+ * Definicion de las interfaces necesarias para el modelo de la informacion de la peticion de personajes de la API Rick and Morty
+*/
+
 export interface Personajes {
     info:    Info;
     results: Result[];

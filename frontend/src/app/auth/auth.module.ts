@@ -7,6 +7,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { MainComponent } from './pages/main/main.component';
 
+/* 
+*Componente principal auth 
+*/
+/* En este se encuentra toda la declaracion del login y registro de usuarios para acceder al catalogo  */
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, MainComponent],

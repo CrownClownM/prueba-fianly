@@ -6,9 +6,14 @@ import { tap } from 'rxjs/operators';
 
 import { AuthService } from '../auth/services/auth.service';
 
+/**
+ * Guard encargado de verificar el token mientras el usuario inicia sesion y esta activo
+ */
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ValidarTokenGuard implements CanActivate, CanLoad {
   
   constructor( private authService: AuthService,

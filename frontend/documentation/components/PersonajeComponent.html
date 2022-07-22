@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Modulo de presentacion del personaje seleccionado en el catalogo junto a su informacion</p>
+
+    </p>
 
 
     <p class="comment">
@@ -174,7 +181,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/protected/pages/personaje/personaje.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/protected/pages/personaje/personaje.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -253,14 +260,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/protected/pages/personaje/personaje.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/protected/pages/personaje/personaje.component.ts:27</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene la informacion desde el id del personaje seleccionado</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -295,7 +304,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/protected/pages/personaje/personaje.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/protected/pages/personaje/personaje.component.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -314,16 +323,25 @@ import { switchMap, tap } from &#x27;rxjs/operators&#x27;;
 import { Result } from &#x27;../../interfaces/personajes.interface&#x27;;
 import { RickService } from &#x27;../../services/rick.service&#x27;;
 
+/**
+ * Modulo de presentacion del personaje seleccionado en el catalogo junto a su informacion
+ */
+
 @Component({
   selector: &#x27;app-personaje&#x27;,
   templateUrl: &#x27;./personaje.component.html&#x27;,
   styleUrls: [ &#x27;../../catalogo.css&#x27;]
 })
+
 export class PersonajeComponent implements OnInit {
 
   personaje!: Result | undefined;
 
   constructor(private activatedRoute: ActivatedRoute, private rickService: RickService) { }
+
+  /**
+   * Obtiene la informacion desde el id del personaje seleccionado
+  */
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -654,7 +672,7 @@ button:hover {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="product">    <div>        <img class="imagen" src="{{personaje?.image}}">    </div>    <div>        <h1>{{personaje?.name}}</h1>        <p>Género: {{personaje?.gender}}</p>        <p>Especie: {{personaje?.species}}</p>        <p>Localización: {{personaje?.location?.name}}</p>        <p>Estado: {{personaje?.status}}</p>        <a routerLink="../../"><button>Volver al inicio</button></a>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BusquedaComponent', 'selector': 'app-busqueda'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'PersonajeComponent', 'selector': 'app-personaje'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CatalogoComponent', 'selector': 'app-catalogo'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'PersonajeComponent', 'selector': 'app-personaje'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PersonajeComponent'};
 </script>
