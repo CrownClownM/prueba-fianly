@@ -1,0 +1,60 @@
+<form class="form-register" 
+      [formGroup]="miFormulario"
+      (ngSubmit)="registro()">
+
+    <h5>Registro</h5>
+    <label>Nombre</label>
+    <input class="controls" 
+            type="text" 
+            formControlName="name"
+            placeholder="Ingrese su nombre">
+    <label>Apellido</label>
+    <input class="controls" 
+           type="text" 
+           formControlName="lastName"
+           placeholder="Ingrese su apellido">
+    <label>Correo</label>
+    <input class="controls" 
+            type="email" 
+            formControlName="email"
+            placeholder="Ingrese su correo">
+    <label>Contraseña</label>
+    <input class="controls" 
+            type="password" 
+            formControlName="password"
+            placeholder="Ingrese su contraseña">
+    <label>Fecha de nacimiento</label>
+    <input class="controls" 
+           type="date" 
+           formControlName="dateBirth">
+    <label>Sexo</label>
+    <div class="container">
+        <label class="radioButton"> 
+                <input
+                name="gender"
+                type="radio"
+                value="M"
+                formControlName="gender"> Masculino
+                <span></span>
+        </label>
+        <label class="radioButton">
+                <input
+                name="gender"
+                type="radio"
+                value="F"
+                formControlName="gender"> Femenino
+                <span></span>
+        </label>
+    </div>
+    
+    <button class="boton cuatro"
+            type="submit">
+    <span>Registrarse</span>
+    </button>
+    <p>
+        <span>¿Ya tienes una cuenta?</span>
+        <br>
+        <a routerLink="/">INGRESA AQUÍ</a>
+    </p>
+
+</form>
